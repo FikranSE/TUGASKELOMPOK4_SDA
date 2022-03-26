@@ -307,6 +307,12 @@ public class Main  {
 }
                 //Output Graph Harga Pesanan
             Graph g = new Graph(11);
+                
+        /*         0 = Mie
+         ( 1,2,3,4 ) = Jenis Mie
+                   5 = Minuman
+      ( 6,7,8,9,10 ) = Jenis Minuman     */
+        
                 g.addEdge(0, 1);
                 g.addEdge(0, 2);
                 g.addEdge(0, 3);
