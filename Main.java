@@ -30,7 +30,7 @@ public class Main  {
         mie = new String[4];
         
         //Minuman
-        arrPesanan[0] = "BOBA";
+        arrPesanan[0] = "SUSU JAHE MERAH";
         arrPesanan[1] = "CAPPUCINO";
         arrPesanan[2] = "GREEN TEA";
         arrPesanan[3] = "LATTE";
@@ -43,17 +43,8 @@ public class Main  {
         mie[3] = "MIE SOTO";
         
         //deklarasi input
-        Scanner input=new Scanner(System.in);
+        Scanner in=new Scanner(System.in);
         Scanner str = new Scanner(System.in);
-        Scanner iPesan = new Scanner(System.in);
-        Scanner PilihMenu = new Scanner(System.in);
-        Scanner jwbPesan = new Scanner(System.in);
-        Scanner Pcek = new Scanner(System.in);
-        Scanner rmvN = new Scanner(System.in);
-        Scanner rmvK = new Scanner(System.in);
-        Scanner rmvMie = new Scanner(System.in);
-        Scanner InMie = new Scanner(System.in);
-        Scanner PushMie = new Scanner(System.in);
         //deklarasi queue
         Queue<String> name= new LinkedList<>();
         Queue<String> pesan= new LinkedList<>();
@@ -99,7 +90,7 @@ public class Main  {
             System.out.println("\t\t\t\t10.Keluar");
             System.out.println("\t\t\t\t==============================");
             System.out.print("\t\t\t\t     Pilihan Anda : ");
-            menu=input.nextInt();
+            menu=in.nextInt();
             System.out.println("\n");
             if(menu==1){
                 System.out.println("\t\t\t\t==============================");
@@ -121,7 +112,7 @@ public class Main  {
                 System.out.println("\t\t\t\t----------------------");
                 System.out.println("\t\t\t\t||**PESANAN PELANGGAN**||");
                 System.out.println("\t\t\t\t----------------------");
-                System.out.println("\t\t\t\t| 1.BOBA");
+                System.out.println("\t\t\t\t| 1.SUSU JAHE MERAH");
                 System.out.println("\t\t\t\t| 2.CAPPUCINO");
                 System.out.println("\t\t\t\t| 3.GREEN TEA");
                 System.out.println("\t\t\t\t| 4.LATTE");
@@ -129,7 +120,7 @@ public class Main  {
                 System.out.println("\t\t\t\t| 6.MOCCA");
                 System.out.println("\t\t\t\t----------------------");
                 System.out.print("\t\t\t\tPILIH MENU : ");
-                Pesanan = iPesan.nextInt();
+                Pesanan = in.nextInt();
                     if(Pesanan==1){
                     pesan.add(arrPesanan[0]);
                 }else if(Pesanan==2){
@@ -158,7 +149,7 @@ public class Main  {
                 System.out.println("\t\t\t\t4. "+mie[3]);
                 System.out.println("\t\t\t\t==============================");
                 System.out.print("\t\t\t\tPILIH MENU : ");
-                inputMie = InMie.nextInt();
+                inputMie = in.nextInt();
                 if(inputMie==1){
                     pesanMie.add(mie[0]);
                     
@@ -221,12 +212,12 @@ public class Main  {
                 System.out.println("\t\t\t\t2.Tambah Tumpukan Piring ");
                 System.out.println("\t\t\t\t----------------------");
                 System.out.print("\t\t\t\tPILIH  : ");
-                CekP = Pcek.nextInt();
+                CekP = in.nextInt();
                 if(CekP==1){
                     System.out.println("\t\t\t\t"+piring);
                 }else if(CekP==2){
                     System.out.print("\t\t\t\tMasukan piring & No urut : ");
-                    PMie = PushMie.nextLine();
+                    PMie = str.nextLine();
                     piring.push(PMie);
                 if(piring.isEmpty()){   
                     System.out.println("\t\t\t\tDATA MASIH KOSONG!!");
@@ -241,11 +232,11 @@ public class Main  {
                     System.out.println("\t\t\t\tDATA KOSONG!!");
                 }else{
                 System.out.print("\t\t\t\tMasukan NAMA Pelanggan : ");
-                hapusNama = rmvN.nextLine();
+                hapusNama = str.nextLine();
                 System.out.print("\t\t\t\tMasukan Nama Minuman   : ");
-                hapusPesanan = rmvK.nextLine();
+                hapusPesanan = str.nextLine();
                 System.out.print("\t\t\t\tMasukan Nama Makanan   : ");
-                hapusMie = rmvMie.nextLine();
+                hapusMie = str.nextLine();
                 System.out.print("\n");
 
                     if(name.contains(hapusNama)&&pesan.contains(hapusPesanan)&&pesanMie.contains(hapusMie)==false){
@@ -307,12 +298,6 @@ public class Main  {
 }
                 //Output Graph Harga Pesanan
             Graph g = new Graph(11);
-                
-        /*         0 = Mie
-         ( 1,2,3,4 ) = Jenis Mie
-                   5 = Minuman
-      ( 6,7,8,9,10 ) = Jenis Minuman     */
-        
                 g.addEdge(0, 1);
                 g.addEdge(0, 2);
                 g.addEdge(0, 3);
